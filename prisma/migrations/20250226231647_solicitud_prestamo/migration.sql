@@ -1,0 +1,33 @@
+-- CreateTable
+CREATE TABLE "SolicitudPrestamo" (
+    "id" TEXT NOT NULL,
+    "nombres" TEXT NOT NULL,
+    "apellidos" TEXT NOT NULL,
+    "cedula" INTEGER NOT NULL,
+    "email" TEXT NOT NULL,
+    "fechaNacimiento" TIMESTAMP(3) NOT NULL,
+    "direccion" TEXT NOT NULL,
+    "tipoVivienda" "TipoViviend" NOT NULL,
+    "tiempoHabVivienda" TEXT NOT NULL,
+    "procedimiento" TEXT NOT NULL,
+    "celular" INTEGER NOT NULL,
+    "ciudad" TEXT NOT NULL,
+    "lugarTrabajo" TEXT NOT NULL,
+    "cargo" TEXT NOT NULL,
+    "ingMensual" TEXT NOT NULL,
+    "tiempoTrabajo" TEXT NOT NULL,
+    "tipoEmpresa" TEXT NOT NULL,
+    "sectorProductivo" TEXT NOT NULL,
+    "localidadCiudad" TEXT NOT NULL,
+    "dirEmpresa" TEXT NOT NULL,
+    "refUbicacion" TEXT NOT NULL,
+    "telfEmpresa" INTEGER NOT NULL,
+    "otroIngr" TEXT NOT NULL,
+    "nomRef" TEXT NOT NULL,
+    "apeRef" TEXT NOT NULL,
+    "parentezco" TEXT NOT NULL,
+    "telfRef" INTEGER NOT NULL,
+    "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "SolicitudPrestamo_pkey" PRIMARY KEY ("id")
+);
