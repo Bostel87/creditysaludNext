@@ -57,7 +57,7 @@ export const SolicitudForm = () => {
     
             };
     
-            fetch("http://localhost:3000/api/email", requestOptions)
+            fetch("https://creditysalud.com/api/email", requestOptions)
                 // .then((response) => response.text())
                 // .then((result) => console.log(result))
                 // .catch((error) => console.error(error));
