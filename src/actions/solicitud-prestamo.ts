@@ -40,40 +40,46 @@ export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
     // console.log(data);
     const fecha = new Date(data.fechaNacimiento);
     // console.log(fecha);
-
-    const saveSolicitud = await prisma.solicitudPrestamo.create({
-        data: {
-            nombres: data.nombres,
-            apellidos: data.apellidos,
-            cedula: parseInt(data.cedula),
-            email: data.email,
-            fechaNacimiento: fecha,
-            direccion: data.direccion,
-            tipoVivienda: data.tipoVivienda,
-            tiempoHabVivienda: data.tiempoHabVivienda,
-            procedimiento: data.procedimiento,
-            celular: parseInt(data.celular),
-            ciudad: data.ciudad,
-            lugarTrabajo: data.lugarTrabajo,
-            cargo: data.cargo,
-            ingMensual: data.ingMensual,
-            tiempoTrabajo: data.tiempoTrabajo,
-            tipoEmpresa: data.tipoEmpresa,
-            sectorProductivo: data.sectorProductivo,
-            localidadCiudad: data.localidadCiudad,
-            dirEmpresa: data.dirEmpresa,
-            refUbicacion: data.refUbicacion,
-            telfEmpresa: parseInt(data.telfEmpresa),
-            otroIngr: data.otroIngr,
-            nomRef: data.nomRef,
-            apeRef: data.apeRef,
-            parentezco: data.parentezco,
-            telfRef: parseInt(data.telfRef),
+    try {
+        const saveSolicitud = await prisma.solicitudPrestamo.create({
+            data: {
+                nombres: data.nombres,
+                apellidos: data.apellidos,
+                cedula: parseInt(data.cedula),
+                email: data.email,
+                fechaNacimiento: fecha,
+                direccion: data.direccion,
+                tipoVivienda: data.tipoVivienda,
+                tiempoHabVivienda: data.tiempoHabVivienda,
+                procedimiento: data.procedimiento,
+                celular: parseInt(data.celular),
+                ciudad: data.ciudad,
+                lugarTrabajo: data.lugarTrabajo,
+                cargo: data.cargo,
+                ingMensual: data.ingMensual,
+                tiempoTrabajo: data.tiempoTrabajo,
+                tipoEmpresa: data.tipoEmpresa,
+                sectorProductivo: data.sectorProductivo,
+                localidadCiudad: data.localidadCiudad,
+                dirEmpresa: data.dirEmpresa,
+                refUbicacion: data.refUbicacion,
+                telfEmpresa: parseInt(data.telfEmpresa),
+                otroIngr: data.otroIngr,
+                nomRef: data.nomRef,
+                apeRef: data.apeRef,
+                parentezco: data.parentezco,
+                telfRef: parseInt(data.telfRef),
+            }
+        })
+        return {
+            ok: true,
+            message: 'solicitud de prestamo ingresada',
+            saveSolicitud: saveSolicitud,
         }
-    })
-    return {
-        ok: true,
-        message: 'solicitud de prestamo ingresada',
-        saveSolicitud: saveSolicitud,
+    } catch (error) {
+        console.log(error);
+        
     }
+
+    
 }
