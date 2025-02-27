@@ -74,5 +74,6 @@ export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
     return {
         ok: true,
         message: 'solicitud de prestamo ingresada',
+        saveSolicitud: saveSolicitud,
     }
 }

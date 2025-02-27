@@ -2,7 +2,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import  { NotionMagicLinkEmail } from '@/emails/solicitud'
-import { stat } from 'fs';
+// import { stat } from 'fs';
 // import ResetPassword from '@/emails/ResetPassword';
 const resend = new Resend(process.env.RESEND_API_KEY);
 

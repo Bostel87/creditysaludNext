@@ -36,6 +36,7 @@ export const grabarSolicutud = async (FormInput: FormInputs) => {
     return {
         ok: true,
         message:'solicitud ingresada',
+        saveSolicitud: saveSolicitud,
     }
 }
 // import prisma from "../../lib/prisma";import SolicitudPage from '../app/solicitud/page';

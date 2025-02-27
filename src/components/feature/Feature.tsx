@@ -1,4 +1,4 @@
-import { ClockIcon, CloudArrowUpIcon, CreditCardIcon, CurrencyDollarIcon, HeartIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
+import { ClockIcon, CreditCardIcon, CurrencyDollarIcon, HeartIcon } from '@heroicons/react/20/solid'
 import Image from 'next/image'
 
 const features = [

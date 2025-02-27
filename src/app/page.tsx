@@ -3,9 +3,9 @@ import Feature from "@/components/feature/Feature";
 import  Hero  from "@/components/hero/Hero";
 import SecondFeature from "@/components/secondfeature/SecondFeature";
 // import TopMenu from "@/components/ui/TopMenu";
-import Video from "@/components/video/Video";
-import { titleFont } from "@/config/fonts";
-import Image from "next/image";
+// import Video from "@/components/video/Video";
+// import { titleFont } from "@/config/fonts";
+// import Image from "next/image";
 
 export default function Home() {
   return (
