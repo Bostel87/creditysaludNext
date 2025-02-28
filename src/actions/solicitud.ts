@@ -36,31 +36,31 @@ export const grabarSolicutud = async (FormInput: FormInputs) => {
         })
 
         // try {
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+        // const myHeaders = new Headers();
+        // myHeaders.append("Content-Type", "application/json");
 
-        const raw = JSON.stringify({
-            nombres: data.nombres,
-            apellidos: data.apellidos,
-            cedula: data.cedula,
-            email: data.email,
-            procedimiento: data.procedimiento,
-            monto: data.monto,
-            celular: data.celular,
-            ciudad: data.ciudad,
-        });
+        // const raw = JSON.stringify({
+        //     nombres: data.nombres,
+        //     apellidos: data.apellidos,
+        //     cedula: data.cedula,
+        //     email: data.email,
+        //     procedimiento: data.procedimiento,
+        //     monto: data.monto,
+        //     celular: data.celular,
+        //     ciudad: data.ciudad,
+        // });
 
-        const requestOptions: RequestInit = {
-            method: "POST",
-            headers: myHeaders,
-            body: raw,
+        // const requestOptions: RequestInit = {
+        //     method: "POST",
+        //     headers: myHeaders,
+        //     body: raw,
 
-        };
+        // };
 
-        await fetch("https://creditysalud.com/api/email", requestOptions)
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.error(error));
+        // await fetch("https://creditysalud.com/api/email", requestOptions)
+        // .then((response) => response.text())
+        // .then((result) => console.log(result))
+        // .catch((error) => console.error(error));
 
         // console.log('Email enviado');
 
