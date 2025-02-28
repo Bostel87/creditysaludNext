@@ -75,7 +75,9 @@ export const grabarSolicutud = async (FormInput: FormInputs) => {
             saveSolicitud: saveSolicitud,
         }
     } catch (error) {
-        console.log(error);
+        throw new Error(
+            "The username or password is wrong. Please check and try again."
+          );
 
     }
 
