@@ -54,7 +54,7 @@ export const SolicitudPrestamoForm = () => {
                 //  console.log({resp});
                     return;
                 }
-            alert('Gracias ..!! Solicitud de Prestamo ingresada');
+            alert('Gracias ..!! Formulario de Prestamo enviado');
             router.push('/');
 
     }

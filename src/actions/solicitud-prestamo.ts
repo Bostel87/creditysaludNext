@@ -37,9 +37,9 @@ interface FormInputs {
 
 export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
     const data = FormInput;
-    // console.log(data);
+    console.log(data);
     const fecha = new Date(data.fechaNacimiento);
-    // console.log(fecha);
+    console.log(fecha);
     try {
         const saveSolicitud = await prisma.solicitudPrestamo.create({
             data: {
@@ -71,6 +71,47 @@ export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
                 telfRef: parseInt(data.telfRef),
             }
         })
+
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            nombres: data.nombres,
+            apellidos: data.apellidos,
+            cedula: data.cedula,
+            email: data.email,
+            fechaNacimiento: data.fechaNacimiento,
+            direccion: data.direccion,
+            tipoVivienda: data.tipoVivienda,
+            tiempoHabVivienda: data.tiempoHabVivienda,
+            procedimiento: data.procedimiento,
+            celular: data.celular,
+            ciudad: data.ciudad,
+            lugarTrabajo: data.lugarTrabajo,
+            cargo: data.cargo,
+            ingMensual: data.ingMensual,
+            tiempoTrabajo: data.tiempoTrabajo,
+            tipoEmpresa: data.tipoEmpresa,
+            sectorProductivo: data.sectorProductivo,
+            localidadCiudad: data.localidadCiudad,
+            dirEmpresa: data.dirEmpresa,
+            refUbicacion: data.refUbicacion,
+            telfEmpresa: data.telfEmpresa,
+            otroIngr: data.otroIngr,
+            nomRef: data.nomRef,
+            apeRef: data.apeRef,
+            parentezco: data.parentezco,
+            telfRef: data.telfRef,
+        });
+
+        const requestOptions: RequestInit = {
+            method: "PUT",
+            headers: myHeaders,
+            body: raw,
+
+        };
+
+        fetch("https://creditysalud.com/api/email", requestOptions)
         return {
             ok: true,
             message: 'solicitud de prestamo ingresada',

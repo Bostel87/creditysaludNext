@@ -34,17 +34,52 @@ export const grabarSolicutud = async (FormInput: FormInputs) => {
                 ciudad: data.ciudad,
             }
         })
+
+        // try {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            nombres: data.nombres,
+            apellidos: data.apellidos,
+            cedula: data.cedula,
+            email: data.email,
+            procedimiento: data.procedimiento,
+            monto: data.monto,
+            celular: data.celular,
+            ciudad: data.ciudad,
+        });
+
+        const requestOptions: RequestInit = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+
+        };
+
+        fetch("https://creditysalud.com/api/email", requestOptions)
+        // .then((response) => response.text())
+        // .then((result) => console.log(result))
+        // .catch((error) => console.error(error));
+
+        // console.log('Email enviado');
+
+
+        // } catch (error) {
+        //     console.log(error);
+
+        // }
         return {
             ok: true,
-            message:'solicitud ingresada',
+            message: 'solicitud ingresada',
             saveSolicitud: saveSolicitud,
         }
     } catch (error) {
         console.log(error);
-        
+
     }
-     
-    
+
+
 }
 // import prisma from "../../lib/prisma";import SolicitudPage from '../app/solicitud/page';
 // import { Prisma } from '@prisma/client';
