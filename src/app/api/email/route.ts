@@ -5,8 +5,9 @@ import  { NotionMagicLinkEmail } from '@/emails/solicitud'
 import { NotionMagicLinkEmailP } from '@/emails/solicitud-prestamo';
 // import { stat } from 'fs';
 // import ResetPassword from '@/emails/ResetPassword';
-const resend = new Resend(process.env.RESEND_API_KEY);
-
+// const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend("re_7PGPwg2Z_6VUz8rEqbL4UrgU9CCxvHa3n");
+// RESEND_API_KEY=re_7PGPwg2Z_6VUz8rEqbL4UrgU9CCxvHa3n
 
 export async function GET(){
     return NextResponse.json({
