@@ -24,18 +24,6 @@ export async function POST (req: Request) {
      console.log(nombres, apellidos, cedula, email, procedimiento, monto, celular, ciudad);
     
     try {
-        const saveSolicitud = await prisma.solicitud.create({
-            data: {
-                nombres: nombres,
-                apellidos: apellidos,
-                cedula: parseInt(cedula),
-                email: email,
-                procedimiento: procedimiento,
-                monto: monto,
-                celular: parseInt(celular),
-                ciudad: ciudad,
-            }
-        })
             await resend.emails.send({
             from: 'Info <no-reply@creditysalud.com>',
             to: 'info@creditysalud.com',
@@ -52,7 +40,7 @@ export async function POST (req: Request) {
             }),
           });
     
-          return NextResponse.json({status: saveSolicitud}, {status: 200});
+          return NextResponse.json({status: 'ok'}, {status: 200});
     } catch (error) {
         console.log(error);
         

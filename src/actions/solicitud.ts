@@ -35,7 +35,43 @@ export const grabarSolicutud = async (FormInput: FormInputs) => {
             }
         })
 
-        
+        try {
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            nombres: data.nombres,
+            apellidos: data.apellidos,
+            cedula: data.cedula,
+            email: data.email,
+            procedimiento: data.procedimiento,
+            monto: data.monto,
+            celular: data.celular,
+            ciudad: data.ciudad,
+        });
+
+        const requestOptions: RequestInit = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+
+        };
+
+        await fetch("https://creditysalud.com/api/email",  {
+            ...requestOptions,
+            cache: 'no-store',
+        }).then(r => r.json());
+        // .then((response) => response.text())
+        // .then((result) => console.log(result))
+        // .catch((error) => console.error(error));
+
+        console.log('Email enviado');
+
+
+        } catch (error) {
+            console.log(error);
+
+        }
         return {
             ok: true,
             message: 'solicitud ingresada',
