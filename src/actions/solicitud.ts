@@ -57,7 +57,7 @@ export const grabarSolicutud = async (FormInput: FormInputs) => {
 
         };
 
-        fetch("https://creditysalud.com/api/email", requestOptions)
+        await fetch("https://creditysalud.com/api/email", requestOptions)
         // .then((response) => response.text())
         // .then((result) => console.log(result))
         // .catch((error) => console.error(error));

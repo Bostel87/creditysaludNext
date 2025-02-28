@@ -111,7 +111,7 @@ export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
 
         };
 
-        fetch("https://creditysalud.com/api/email", requestOptions)
+        await fetch("https://creditysalud.com/api/email", requestOptions)
         return {
             ok: true,
             message: 'solicitud de prestamo ingresada',
