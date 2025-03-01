@@ -38,7 +38,7 @@ export const SolicitudForm = () => {
         try {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-            myHeaders.append("Access-Control-Allow-Origin", "*");
+            myHeaders.append("Access-Control-Allow-Origin", "https://creditysalud.com/api/email");
             myHeaders.append("Access-Control-Allow-Methods", "POST");
             myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
             myHeaders.append('Access-Control-Allow-Credentials', "true");
