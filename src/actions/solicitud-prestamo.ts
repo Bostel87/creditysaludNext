@@ -74,6 +74,10 @@ export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
 
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Allow-Origin", "*");
+        myHeaders.append("Access-Control-Allow-Methods", "POST");
+        myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
+        myHeaders.append('Access-Control-Allow-Credentials', "true");
 
         const raw = JSON.stringify({
             nombres: data.nombres,
@@ -111,7 +115,10 @@ export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
 
         };
 
-        await fetch("https://creditysalud.com/api/email", requestOptions)
+        await fetch("https://creditysalud.com/api/email",  {
+            ...requestOptions,
+            cache: 'reload',
+        }).then(r => r.json());
         return {
             ok: true,
             message: 'solicitud de prestamo ingresada',
