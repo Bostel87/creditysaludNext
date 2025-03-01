@@ -37,9 +37,9 @@ interface FormInputs {
 
 export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
     const data = FormInput;
-    console.log(data);
+    // console.log(data);
     const fecha = new Date(data.fechaNacimiento);
-    console.log(fecha);
+    // console.log(fecha);
     try {
         const saveSolicitud = await prisma.solicitudPrestamo.create({
             data: {
