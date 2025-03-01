@@ -58,7 +58,7 @@ export async function PUT (req: Request) {
     try {
             await resend.emails.send({
             from: 'Info <no-reply@creditysalud.com>',
-            to: 'osmarypdg@gmail.com',
+            to: 'boris.parrales.m@gmail.com',
             subject: 'Formulario de Analisis de Credito',
             react: NotionMagicLinkEmailP({
               nombres: nombres,
