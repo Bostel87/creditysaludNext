@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  devIndicators: {
-    appIsrStatus: false,
-  },
+  // devIndicators: {
+  //   appIsrStatus: false,
+  // },
   // reactStrictMode: true,
   // poweredByHeader: false,
   // productionBrowserSourceMaps: true,
