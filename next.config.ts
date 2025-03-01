@@ -22,7 +22,15 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
-  }
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/email',
+        destination: 'https://creditysalud.com/api/email',
+      },
+    ]
+  },
   //  as any, // Workaround for
   //
   // Type '() => { source: string; headers: { key: string; value: string; }[]; }[]' is not assignable to type '() => Promise<Header[]>'.
