@@ -63,7 +63,7 @@ export const SolicitudForm = () => {
     
              await fetch("https://creditysalud.com/api/email",  {
                 ...requestOptions,
-                cache: 'no-store',
+                cache: 'reload',
             }).then(r => r.json());
             // .then((response) => response.text())
             // .then((result) => console.log(result))
