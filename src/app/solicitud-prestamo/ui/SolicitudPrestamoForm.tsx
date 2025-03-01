@@ -48,18 +48,18 @@ export const SolicitudPrestamoForm = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
         // console.log(data);
-        const resp = await grabarSolicutudPrestamo(data);
-        if (!resp?.ok) {
-            setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
-            //  console.log({resp});
-            return;
-        }
+        // const resp = await grabarSolicutudPrestamo(data);
+        // if (!resp?.ok) {
+        //     setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
+        //     //  console.log({resp});
+        //     return;
+        // }
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Allow-Origin", "*");
         myHeaders.append("Access-Control-Allow-Methods", "PUT");
         myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
-        myHeaders.append('Access-Control-Allow-Credentials', "true");
+        // myHeaders.append('Access-Control-Allow-Credentials', "true");
 
         const raw = JSON.stringify({
             nombres: data.nombres,
@@ -99,9 +99,9 @@ export const SolicitudPrestamoForm = () => {
 
         await fetch("https://creditysalud.com/api/email", {
             ...requestOptions,
-            cache: 'no-store',
+            cache: 'reload',
         }).then(r => r.json());
-        alert('Gracias ..!! Formulario de Prestamo enviado');
+        alert('Gracias ..!! Formulario de Análisis de crédito enviado');
         router.push('/');
 
     }
