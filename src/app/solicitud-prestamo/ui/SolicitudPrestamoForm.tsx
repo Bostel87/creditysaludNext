@@ -59,7 +59,7 @@ export const SolicitudPrestamoForm = () => {
         myHeaders.append("Access-Control-Allow-Origin", "*");
         myHeaders.append("Access-Control-Allow-Methods", "PUT");
         myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
-        // myHeaders.append('Access-Control-Allow-Credentials', "true");
+        myHeaders.append('Access-Control-Allow-Credentials', "true");
 
         const raw = JSON.stringify({
             nombres: data.nombres,
@@ -101,6 +101,8 @@ export const SolicitudPrestamoForm = () => {
             ...requestOptions,
             cache: 'reload',
         }).then(r => r.json());
+
+
         alert('Gracias ..!! Formulario de Análisis de crédito enviado');
         router.push('/');
 

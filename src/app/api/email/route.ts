@@ -53,7 +53,7 @@ export async function POST (req: Request) {
 
 export async function PUT (req: Request) {
     const {nombres, apellidos, cedula, email, fechaNacimiento, direccion, tipoVivienda, tiempoHabVivienda, procedimiento, celular, ciudad, lugarTrabajo, cargo, ingMensual, tiempoTrabajo, tipoEmpresa, sectorProductivo, localidadCiudad, dirEmpresa, refUbicacion, telfEmpresa, otroIngr, nomRef, apeRef, parentezco, telfRef} = await req.json();
-     console.log(nombres, apellidos, cedula, email, fechaNacimiento, direccion, tipoVivienda, tiempoHabVivienda, procedimiento, celular, ciudad, lugarTrabajo, cargo, ingMensual, tiempoTrabajo, tipoEmpresa, sectorProductivo, localidadCiudad, dirEmpresa, refUbicacion, telfEmpresa, otroIngr, nomRef, apeRef, parentezco, telfRef);
+    //  console.log(nombres, apellidos, cedula, email, fechaNacimiento, direccion, tipoVivienda, tiempoHabVivienda, procedimiento, celular, ciudad, lugarTrabajo, cargo, ingMensual, tiempoTrabajo, tipoEmpresa, sectorProductivo, localidadCiudad, dirEmpresa, refUbicacion, telfEmpresa, otroIngr, nomRef, apeRef, parentezco, telfRef);
     
     try {
             await resend.emails.send({
