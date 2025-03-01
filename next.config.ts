@@ -10,27 +10,27 @@ const nextConfig: NextConfig = {
   // images: {
   //   domains: ["res.cloudinary.com"],
   // },
-  // async headers() {
-  //   return [
-  //     {
-  //       source: "/api/:path*",
-  //       headers: [
-  //         // { key: "Access-Control-Allow-Credentials", value: "true" },
-  //         { key: "Access-Control-Allow-Origin", value: "https://creditysalud.com/api/email" },
-  //         { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-  //         { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
-  //       ],
-  //     },
-  //   ];
-  // },
-  async rewrites() {
+  async headers() {
     return [
       {
-        source: '/api/email',
-        destination: 'https://creditysalud.com/api/email',
+        source: "/api/:path*",
+        headers: [
+          // { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "https://creditysalud.com/api/email" },
+          { key: "Access-Control-Allow-Methods", value: "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+          { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" },
+        ],
       },
-    ]
+    ];
   },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/api/email',
+  //       destination: 'https://creditysalud.com/api/email',
+  //     },
+  //   ]
+  // },
   //  as any, // Workaround for
   //
   // Type '() => { source: string; headers: { key: string; value: string; }[]; }[]' is not assignable to type '() => Promise<Header[]>'.
