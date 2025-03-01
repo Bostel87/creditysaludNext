@@ -29,12 +29,12 @@ export const SolicitudForm = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
         // console.log(data);
-        const resp = await grabarSolicutud(data);
-        if (!resp?.ok) {
-            setErrorMessagge(resp?.message || "Error al crear la solicitud");
-         console.log({resp});
-            return;
-        }
+        // const resp = await grabarSolicutud(data);
+        // if (!resp?.ok) {
+        //     setErrorMessagge(resp?.message || "Error al crear la solicitud");
+        //  console.log({resp});
+        //     return;
+        // }
         try {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
