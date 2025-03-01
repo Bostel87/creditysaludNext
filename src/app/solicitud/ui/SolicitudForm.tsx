@@ -41,6 +41,7 @@ export const SolicitudForm = () => {
             myHeaders.append("Access-Control-Allow-Origin", "*");
             myHeaders.append("Access-Control-Allow-Methods", "POST");
             myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
+            myHeaders.append('Access-Control-Allow-Credentials', "true");
     
             const raw = JSON.stringify({
                 nombres: data.nombres,
@@ -60,7 +61,7 @@ export const SolicitudForm = () => {
     
             };
     
-             await  fetch("https://creditysalud.com/api/email",  {
+             await fetch("https://creditysalud.com/api/email",  {
                 ...requestOptions,
                 cache: 'no-store',
             }).then(r => r.json());
