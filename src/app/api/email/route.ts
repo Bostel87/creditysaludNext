@@ -1,10 +1,11 @@
 'use server'
-export const dynamic = "force-dynamic";
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import  { NotionMagicLinkEmail } from '@/emails/solicitud'
 import { NotionMagicLinkEmailP } from '@/emails/solicitud-prestamo';
-import prisma from '@/lib/prisma';
+
+// export const dynamic = "force-dynamic";
+// import prisma from '@/lib/prisma';
 // import { stat } from 'fs';
 // import ResetPassword from '@/emails/ResetPassword';
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -21,6 +22,7 @@ export async function GET(){
     })
 }
 export async function POST (req: Request) {
+    
     const {nombres, apellidos, cedula, email, procedimiento, monto, celular, ciudad} = await req.json();
      console.log(nombres, apellidos, cedula, email, procedimiento, monto, celular, ciudad);
     
