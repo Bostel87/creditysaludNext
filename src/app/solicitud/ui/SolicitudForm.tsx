@@ -38,6 +38,7 @@ export const SolicitudForm = () => {
         try {
             const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Access-Control-Allow-Origin", "*");
     
             const raw = JSON.stringify({
                 nombres: data.nombres,
