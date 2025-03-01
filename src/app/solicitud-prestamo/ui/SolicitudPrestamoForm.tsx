@@ -48,14 +48,61 @@ export const SolicitudPrestamoForm = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
         // console.log(data);
-         const resp = await grabarSolicutudPrestamo(data);
-                if (!resp?.ok) {
-                    setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
-                //  console.log({resp});
-                    return;
-                }
-            alert('Gracias ..!! Formulario de Prestamo enviado');
-            router.push('/');
+        const resp = await grabarSolicutudPrestamo(data);
+        if (!resp?.ok) {
+            setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
+            //  console.log({resp});
+            return;
+        }
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Access-Control-Allow-Origin", "*");
+        myHeaders.append("Access-Control-Allow-Methods", "PUT");
+        myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
+        myHeaders.append('Access-Control-Allow-Credentials', "true");
+
+        const raw = JSON.stringify({
+            nombres: data.nombres,
+            apellidos: data.apellidos,
+            cedula: data.cedula,
+            email: data.email,
+            fechaNacimiento: data.fechaNacimiento,
+            direccion: data.direccion,
+            tipoVivienda: data.tipoVivienda,
+            tiempoHabVivienda: data.tiempoHabVivienda,
+            procedimiento: data.procedimiento,
+            celular: data.celular,
+            ciudad: data.ciudad,
+            lugarTrabajo: data.lugarTrabajo,
+            cargo: data.cargo,
+            ingMensual: data.ingMensual,
+            tiempoTrabajo: data.tiempoTrabajo,
+            tipoEmpresa: data.tipoEmpresa,
+            sectorProductivo: data.sectorProductivo,
+            localidadCiudad: data.localidadCiudad,
+            dirEmpresa: data.dirEmpresa,
+            refUbicacion: data.refUbicacion,
+            telfEmpresa: data.telfEmpresa,
+            otroIngr: data.otroIngr,
+            nomRef: data.nomRef,
+            apeRef: data.apeRef,
+            parentezco: data.parentezco,
+            telfRef: data.telfRef,
+        });
+
+        const requestOptions: RequestInit = {
+            method: "PUT",
+            headers: myHeaders,
+            body: raw,
+
+        };
+
+        await fetch("https://creditysalud.com/api/email", {
+            ...requestOptions,
+            cache: 'reload',
+        }).then(r => r.json());
+        alert('Gracias ..!! Formulario de Prestamo enviado');
+        router.push('/');
 
     }
 
@@ -73,7 +120,7 @@ export const SolicitudPrestamoForm = () => {
     //     }
     //     }
     // const onlyNumber = (e: AddEventListenerOptions) =>{
-        
+
 
     // }
 
@@ -147,21 +194,21 @@ export const SolicitudPrestamoForm = () => {
                                 placeholder='0924615987'
                                 // pattern="^[0-9]+"
                                 onKeyDown={(event) => {
-                                    if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+                                    if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
                                         // Allow: Ctrl+A
-                                       (event.keyCode == 65 && event.ctrlKey === true) ||
+                                        (event.keyCode == 65 && event.ctrlKey === true) ||
                                         // Allow: home, end, left, right
-                                       (event.keyCode >= 35 && event.keyCode <= 39)) {
-                                            // let it happen, don't do anything
-                                            return;
-                                   }
-                                   else {
-                                       // Ensure that it is a number and stop the keypress
-                                       if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-                                           event.preventDefault();
-                                       }
-                                   }
+                                        (event.keyCode >= 35 && event.keyCode <= 39)) {
+                                        // let it happen, don't do anything
+                                        return;
                                     }
+                                    else {
+                                        // Ensure that it is a number and stop the keypress
+                                        if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                                            event.preventDefault();
+                                        }
+                                    }
+                                }
                                 }
                                 className={
                                     clsx(
@@ -172,7 +219,7 @@ export const SolicitudPrestamoForm = () => {
                                     )
                                 }
                                 // className="block w-full font-light rounded-md bg-gray-100 px-3 py-1.5 text-base text-[#111827] outline outline-1 -outline-offset-1 outline-white/10 placeholder:text-[#111827] focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#e84e15] sm:text-sm/6"
-                                {...register('cedula', { required: "Cedula Requerido", maxLength:13 })}
+                                {...register('cedula', { required: "Cedula Requerido", maxLength: 13 })}
                             />
                         </div>
                     </div>
@@ -256,7 +303,7 @@ export const SolicitudPrestamoForm = () => {
                         <div className="mt-2 grid grid-cols-1">
                             <select
                                 id="tipoVivienda"
-                            
+
                                 autoComplete="country-name"
                                 {...register('tipoVivienda', { required: "Tipo de vivienda Requerido" })}
                                 className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-100 py-1.5 pl-3 pr-8 text-base text-[#111827] outline outline-1 -outline-offset-1 outline-white/10 *:bg-gray-800 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#e84e15] sm:text-sm/6"
@@ -308,21 +355,21 @@ export const SolicitudPrestamoForm = () => {
                                 // name="celular"
                                 type="text"
                                 onKeyDown={(event) => {
-                                    if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+                                    if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
                                         // Allow: Ctrl+A
-                                       (event.keyCode == 65 && event.ctrlKey === true) ||
+                                        (event.keyCode == 65 && event.ctrlKey === true) ||
                                         // Allow: home, end, left, right
-                                       (event.keyCode >= 35 && event.keyCode <= 39)) {
-                                            // let it happen, don't do anything
-                                            return;
-                                   }
-                                   else {
-                                       // Ensure that it is a number and stop the keypress
-                                       if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-                                           event.preventDefault();
-                                       }
-                                   }
+                                        (event.keyCode >= 35 && event.keyCode <= 39)) {
+                                        // let it happen, don't do anything
+                                        return;
                                     }
+                                    else {
+                                        // Ensure that it is a number and stop the keypress
+                                        if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                                            event.preventDefault();
+                                        }
+                                    }
+                                }
                                 }
                                 // autoComplete="address-level1"
                                 className={
@@ -451,21 +498,21 @@ export const SolicitudPrestamoForm = () => {
                                     // name="cedula"
                                     type="text"
                                     onKeyDown={(event) => {
-                                        if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+                                        if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
                                             // Allow: Ctrl+A
-                                           (event.keyCode == 65 && event.ctrlKey === true) ||
+                                            (event.keyCode == 65 && event.ctrlKey === true) ||
                                             // Allow: home, end, left, right
-                                           (event.keyCode >= 35 && event.keyCode <= 39)) {
-                                                // let it happen, don't do anything
-                                                return;
-                                       }
-                                       else {
-                                           // Ensure that it is a number and stop the keypress
-                                           if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-                                               event.preventDefault();
-                                           }
-                                       }
+                                            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                                            // let it happen, don't do anything
+                                            return;
                                         }
+                                        else {
+                                            // Ensure that it is a number and stop the keypress
+                                            if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                                                event.preventDefault();
+                                            }
+                                        }
+                                    }
                                     }
                                     // autoComplete="email"
                                     placeholder='2000'
@@ -643,21 +690,21 @@ export const SolicitudPrestamoForm = () => {
                                     // name="nombres"
                                     type="text"
                                     onKeyDown={(event) => {
-                                        if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+                                        if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
                                             // Allow: Ctrl+A
-                                           (event.keyCode == 65 && event.ctrlKey === true) ||
+                                            (event.keyCode == 65 && event.ctrlKey === true) ||
                                             // Allow: home, end, left, right
-                                           (event.keyCode >= 35 && event.keyCode <= 39)) {
-                                                // let it happen, don't do anything
-                                                return;
-                                       }
-                                       else {
-                                           // Ensure that it is a number and stop the keypress
-                                           if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-                                               event.preventDefault();
-                                           }
-                                       }
+                                            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                                            // let it happen, don't do anything
+                                            return;
                                         }
+                                        else {
+                                            // Ensure that it is a number and stop the keypress
+                                            if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                                                event.preventDefault();
+                                            }
+                                        }
+                                    }
                                     }
                                     // autoComplete="given-name"
                                     placeholder='042-967-345'
@@ -791,21 +838,21 @@ export const SolicitudPrestamoForm = () => {
                                     // name="email"
                                     type="text"
                                     onKeyDown={(event) => {
-                                        if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+                                        if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
                                             // Allow: Ctrl+A
-                                           (event.keyCode == 65 && event.ctrlKey === true) ||
+                                            (event.keyCode == 65 && event.ctrlKey === true) ||
                                             // Allow: home, end, left, right
-                                           (event.keyCode >= 35 && event.keyCode <= 39)) {
-                                                // let it happen, don't do anything
-                                                return;
-                                       }
-                                       else {
-                                           // Ensure that it is a number and stop the keypress
-                                           if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) {
-                                               event.preventDefault();
-                                           }
-                                       }
+                                            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                                            // let it happen, don't do anything
+                                            return;
                                         }
+                                        else {
+                                            // Ensure that it is a number and stop the keypress
+                                            if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+                                                event.preventDefault();
+                                            }
+                                        }
+                                    }
                                     }
                                     // autoComplete="email"
                                     placeholder='0954657788'

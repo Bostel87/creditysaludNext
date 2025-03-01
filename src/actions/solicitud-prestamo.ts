@@ -72,53 +72,7 @@ export const grabarSolicutudPrestamo = async (FormInput: FormInputs) => {
             }
         })
 
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "*");
-        myHeaders.append("Access-Control-Allow-Methods", "PUT");
-        myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
-        myHeaders.append('Access-Control-Allow-Credentials', "true");
-
-        const raw = JSON.stringify({
-            nombres: data.nombres,
-            apellidos: data.apellidos,
-            cedula: data.cedula,
-            email: data.email,
-            fechaNacimiento: data.fechaNacimiento,
-            direccion: data.direccion,
-            tipoVivienda: data.tipoVivienda,
-            tiempoHabVivienda: data.tiempoHabVivienda,
-            procedimiento: data.procedimiento,
-            celular: data.celular,
-            ciudad: data.ciudad,
-            lugarTrabajo: data.lugarTrabajo,
-            cargo: data.cargo,
-            ingMensual: data.ingMensual,
-            tiempoTrabajo: data.tiempoTrabajo,
-            tipoEmpresa: data.tipoEmpresa,
-            sectorProductivo: data.sectorProductivo,
-            localidadCiudad: data.localidadCiudad,
-            dirEmpresa: data.dirEmpresa,
-            refUbicacion: data.refUbicacion,
-            telfEmpresa: data.telfEmpresa,
-            otroIngr: data.otroIngr,
-            nomRef: data.nomRef,
-            apeRef: data.apeRef,
-            parentezco: data.parentezco,
-            telfRef: data.telfRef,
-        });
-
-        const requestOptions: RequestInit = {
-            method: "PUT",
-            headers: myHeaders,
-            body: raw,
-
-        };
-
-        await fetch("https://creditysalud.com/api/email",  {
-            ...requestOptions,
-            cache: 'reload',
-        }).then(r => r.json());
+        
         return {
             ok: true,
             message: 'solicitud de prestamo ingresada',
