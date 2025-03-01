@@ -29,52 +29,52 @@ export const SolicitudForm = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
         // console.log(data);
-        const resp = await grabarSolicutud(data);
-        if (!resp?.ok) {
-            setErrorMessagge(resp?.message || "Error al crear la solicitud");
-         console.log({resp});
-            return;
-        }
-        // try {
-        //     const myHeaders = new Headers();
-        //     myHeaders.append("Content-Type", "application/json");
-        //     myHeaders.append("Access-Control-Allow-Origin", "*");
-        //     myHeaders.append("Access-Control-Allow-Methods", "POST");
-        //     myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
+        // const resp = await grabarSolicutud(data);
+        // if (!resp?.ok) {
+        //     setErrorMessagge(resp?.message || "Error al crear la solicitud");
+        //  console.log({resp});
+        //     return;
+        // }
+        try {
+            const myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Access-Control-Allow-Origin", "*");
+            myHeaders.append("Access-Control-Allow-Methods", "POST");
+            myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
     
-        //     const raw = JSON.stringify({
-        //         nombres: data.nombres,
-        //         apellidos: data.apellidos,
-        //         cedula: data.cedula,
-        //         email: data.email,
-        //         procedimiento: data.procedimiento,
-        //         monto: data.monto,
-        //         celular: data.celular,
-        //         ciudad: data.ciudad,
-        //     });
+            const raw = JSON.stringify({
+                nombres: data.nombres,
+                apellidos: data.apellidos,
+                cedula: data.cedula,
+                email: data.email,
+                procedimiento: data.procedimiento,
+                monto: data.monto,
+                celular: data.celular,
+                ciudad: data.ciudad,
+            });
     
-        //     const requestOptions: RequestInit = {
-        //         method: "POST",
-        //         headers: myHeaders,
-        //         body: raw,
+            const requestOptions: RequestInit = {
+                method: "POST",
+                headers: myHeaders,
+                body: raw,
     
-        //     };
+            };
     
-        //      await  fetch("https://creditysalud.com/api/email",  {
-        //         ...requestOptions,
-        //         cache: 'no-store',
-        //     }).then(r => r.json());
-        //     // .then((response) => response.text())
-        //     // .then((result) => console.log(result))
-        //     // .catch((error) => console.error(error));
+             await  fetch("https://creditysalud.com/api/email",  {
+                ...requestOptions,
+                cache: 'no-store',
+            }).then(r => r.json());
+            // .then((response) => response.text())
+            // .then((result) => console.log(result))
+            // .catch((error) => console.error(error));
     
-        //     console.log('Email enviado');
+            console.log('Email enviado');
     
     
-        //     } catch (error) {
-        //         console.log(error);
+            } catch (error) {
+                console.log(error);
     
-        //     }
+            }
         
         alert('Gracias ..!! Solicitud de Prestamo ingresada');
             router.push('/');
