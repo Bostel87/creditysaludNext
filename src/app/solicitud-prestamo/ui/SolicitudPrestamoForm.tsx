@@ -99,7 +99,7 @@ export const SolicitudPrestamoForm = () => {
 
         await fetch("https://creditysalud.com/api/email", {
             ...requestOptions,
-            cache: 'reload',
+            cache: 'no-store',
         }).then(r => r.json());
         alert('Gracias ..!! Formulario de Prestamo enviado');
         router.push('/');
