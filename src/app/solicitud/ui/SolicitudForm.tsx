@@ -60,7 +60,7 @@ export const SolicitudForm = () => {
     
             };
     
-             await  fetch("http://creditysalud.com/api/email",  {
+             await  fetch("https://creditysalud.com/api/email",  {
                 ...requestOptions,
                 cache: 'no-store',
             }).then(r => r.json());
