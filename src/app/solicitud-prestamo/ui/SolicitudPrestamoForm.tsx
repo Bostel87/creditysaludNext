@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Form, SubmitHandler, useForm } from "react-hook-form";
 
 type FormInputs = {
     nombres: string;
@@ -47,6 +47,7 @@ export const SolicitudPrestamoForm = () => {
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
+        // const data = FormInput;
         // console.log(data);
         // const resp = await grabarSolicutudPrestamo(data);
         // if (!resp?.ok) {
@@ -57,7 +58,7 @@ export const SolicitudPrestamoForm = () => {
         const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Access-Control-Allow-Origin", "*");
-        myHeaders.append("Access-Control-Allow-Methods", "PUT");
+        myHeaders.append("Access-Control-Allow-Methods", "POST");
         myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
         myHeaders.append('Access-Control-Allow-Credentials', "true");
 
