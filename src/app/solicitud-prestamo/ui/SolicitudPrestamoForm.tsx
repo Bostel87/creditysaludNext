@@ -91,13 +91,13 @@ export const SolicitudPrestamoForm = () => {
         });
 
         const requestOptions: RequestInit = {
-            method: "PUT",
+            method: "POST",
             headers: myHeaders,
             body: raw,
 
         };
 
-        await fetch("https://creditysalud.com/api/email", {
+        await fetch("https://creditysalud.com/api/emails", {
             ...requestOptions,
             cache: 'reload',
         }).then(r => r.json());
