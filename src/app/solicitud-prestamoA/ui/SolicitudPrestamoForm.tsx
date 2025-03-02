@@ -235,6 +235,7 @@ export const SolicitudPrestamoForm = () => {
                                 id="direccion"
                                 // name="procedimiento"
                                 type="text"
+                                placeholder="Urb Solare via a la Costa"
                                 // autoComplete="street-address"
                                 className={
                                     clsx(
@@ -308,6 +309,7 @@ export const SolicitudPrestamoForm = () => {
                                 id="celular"
                                 // name="celular"
                                 type="text"
+                                placeholder="0945367744"
                                 onKeyDown={(event) => {
                                     if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
                                         // Allow: Ctrl+A
@@ -349,6 +351,7 @@ export const SolicitudPrestamoForm = () => {
                                 id="ciudad"
                                 // name="ciudad"
                                 type="text"
+                                placeholder="Guayaquil"
                                 // autoComplete="postal-code"
                                 className={
                                     clsx(

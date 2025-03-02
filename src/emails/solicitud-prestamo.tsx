@@ -76,7 +76,7 @@ export const NotionMagicLinkEmailP = ({
     <Body style={main}>
       <Preview>Formulario de crédito</Preview>
       <Container style={container}>
-        <Heading style={h1}>Formulario de crédito</Heading>
+        <Heading style={h1}>Formulario de análisis de crédito</Heading>
         {/* <Link
           href="https://notion.so"
           target="_blank"
@@ -89,7 +89,7 @@ export const NotionMagicLinkEmailP = ({
           Click here to log in with this magic link
         </Link> */}
         <Text style={{ ...text, marginBottom: '10px' }}>
-          Recibiste un formulario de crédito
+          Recibiste un formulario de análisis de crédito
         </Text>
         {/* <code style={code} className='gap-2'> */}
           Nombres: {nombres} <br />

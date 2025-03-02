@@ -1,6 +1,6 @@
 // import { ChevronDownIcon } from '@heroicons/react/16/solid'
 'use client'
-import { grabarSolicutud } from "@/actions/solicitud";
+import { grabarSolicitud } from "@/actions/solicitud";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -24,13 +24,16 @@ export const SolicitudForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>();
     const [errorMessagge, setErrorMessagge] = useState("");
+    const [isPlacingOrder, setIsPlacingOrder] = useState(false);
     // const { register, handleSubmit } = useForm<FormInputs>()
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
+        setIsPlacingOrder(true);
         // console.log(data);
-        const resp = await grabarSolicutud(data);
+        const resp = await grabarSolicitud(data);
         if (!resp?.ok) {
+            setIsPlacingOrder(false);
             setErrorMessagge(resp?.message || "Error al crear la solicitud");
          console.log({resp});
             return;
@@ -365,6 +368,7 @@ export const SolicitudForm = () => {
                         Cancelar
                     </button>
                     <button
+                        disabled={isPlacingOrder}
                         type="submit"
                         className="rounded-md bg-[#111827] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#e84e15] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e84e15]"
                     >

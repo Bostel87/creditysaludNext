@@ -17,7 +17,7 @@ interface FormInputs {
 }
 
 
-export const grabarSolicutud = async (FormInput: FormInputs) => {
+export const grabarSolicitud = async (FormInput: FormInputs) => {
     const data = FormInput;
     // console.log(data);
 
