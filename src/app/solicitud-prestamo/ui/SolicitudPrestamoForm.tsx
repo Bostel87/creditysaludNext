@@ -49,64 +49,13 @@ export const SolicitudPrestamoForm = () => {
         setErrorMessagge('');
         // const data = FormInput;
         // console.log(data);
-        // const resp = await grabarSolicutudPrestamo(data);
-        // if (!resp?.ok) {
-        //     setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
-        //     //  console.log({resp});
-        //     return;
-        // }
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-        myHeaders.append("Access-Control-Allow-Origin", "*");
-        myHeaders.append("Access-Control-Allow-Methods", "POST");
-        myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
-        // myHeaders.append('Access-Control-Allow-Credentials', "true");
-
-        const raw = JSON.stringify({
-            nombres: data.nombres,
-            apellidos: data.apellidos,
-            cedula: data.cedula,
-            email: data.email,
-            fechaNacimiento: data.fechaNacimiento,
-            direccion: data.direccion,
-            tipoVivienda: data.tipoVivienda,
-            tiempoHabVivienda: data.tiempoHabVivienda,
-            procedimiento: data.procedimiento,
-            celular: data.celular,
-            ciudad: data.ciudad,
-            lugarTrabajo: data.lugarTrabajo,
-            cargo: data.cargo,
-            ingMensual: data.ingMensual,
-            tiempoTrabajo: data.tiempoTrabajo,
-            tipoEmpresa: data.tipoEmpresa,
-            sectorProductivo: data.sectorProductivo,
-            localidadCiudad: data.localidadCiudad,
-            dirEmpresa: data.dirEmpresa,
-            refUbicacion: data.refUbicacion,
-            telfEmpresa: data.telfEmpresa,
-            otroIngr: data.otroIngr,
-            nomRef: data.nomRef,
-            apeRef: data.apeRef,
-            parentezco: data.parentezco,
-            telfRef: data.telfRef,
-        });
-
-        const requestOptions: RequestInit = {
-            method: "POST",
-            headers: myHeaders,
-            body: raw,
-
-        };
-
-        await fetch("https://creditysalud-next.vercel.app/api/emails", {
-            ...requestOptions,
-            cache: 'reload',
-        }).then(r => r.json());
-        // return {
-        //     ok: true,
-        //     message: 'solicitud de analisis de credito ingresada',
-        //     // saveSolicitud: saveSolicitud,
-        // }
+        const resp = await grabarSolicutudPrestamo(data);
+        if (!resp?.ok) {
+            setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
+            //  console.log({resp});
+            return;
+        }
+        
 
         alert('Gracias ..!! Formulario de Análisis de crédito enviado');
         router.push('/');
