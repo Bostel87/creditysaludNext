@@ -91,7 +91,7 @@ export const NotionMagicLinkEmailP = ({
         <Text style={{ ...text, marginBottom: '10px' }}>
           Recibiste un formulario de crédito
         </Text>
-        <code style={code} className='gap-2'>
+        {/* <code style={code} className='gap-2'> */}
           Nombres: <p className='font-light text-[#e84e15]'>{nombres}</p> <br />
           Apellidos: <p className='font-light text-[#e84e15]'>{apellidos}</p> <br />
           Cédula: <p className='font-light text-[#e84e15]'>{cedula}</p> <br />
@@ -118,7 +118,7 @@ export const NotionMagicLinkEmailP = ({
           Apellido de la Referencia: <p className='font-light text-[#e84e15]'>{apeRef}</p> <br />
           Parentezco: <p className='font-light text-[#e84e15]'>{parentezco} </p><br />
           Teléfono de la Referencia: <p className='font-light text-[#e84e15]'>{telfRef}</p> <br />
-        </code>
+        {/* </code> */}
         {/* <Text
           style={{
             ...text,

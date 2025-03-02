@@ -29,7 +29,7 @@ export async function POST (req: Request) {
     try {
             await resend.emails.send({
             from: 'Info <no-reply@creditysalud.com>',
-            to: 'boris.parrales.m@gmail.com',
+            to: 'osmarypdg@gmail.com',
             subject: 'Formulario de Analisis de Credito',
             react: NotionMagicLinkEmailP({
               nombres: nombres,
