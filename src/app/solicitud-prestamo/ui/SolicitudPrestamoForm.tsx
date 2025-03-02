@@ -102,7 +102,11 @@ export const SolicitudPrestamoForm = () => {
             ...requestOptions,
             cache: 'reload',
         }).then(r => r.json());
-
+        return {
+            ok: true,
+            message: 'solicitud de analisis de credito ingresada',
+            // saveSolicitud: saveSolicitud,
+        }
 
         alert('Gracias ..!! Formulario de Análisis de crédito enviado');
         router.push('/');

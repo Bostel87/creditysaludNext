@@ -1,7 +1,7 @@
 'use server'
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
-import  { NotionMagicLinkEmail } from '@/emails/solicitud'
+// import  { NotionMagicLinkEmail } from '@/emails/solicitud'
 import { NotionMagicLinkEmailP } from '@/emails/solicitud-prestamo';
 
 // export const dynamic = "force-dynamic";
