@@ -5,7 +5,7 @@ import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { Form, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 
 type FormInputs = {
     nombres: string;
@@ -102,11 +102,11 @@ export const SolicitudPrestamoForm = () => {
             ...requestOptions,
             cache: 'reload',
         }).then(r => r.json());
-        return {
-            ok: true,
-            message: 'solicitud de analisis de credito ingresada',
-            // saveSolicitud: saveSolicitud,
-        }
+        // return {
+        //     ok: true,
+        //     message: 'solicitud de analisis de credito ingresada',
+        //     // saveSolicitud: saveSolicitud,
+        // }
 
         alert('Gracias ..!! Formulario de Análisis de crédito enviado');
         router.push('/');

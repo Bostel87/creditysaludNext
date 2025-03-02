@@ -2,7 +2,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 import  { NotionMagicLinkEmail } from '@/emails/solicitud'
-import { NotionMagicLinkEmailP } from '@/emails/solicitud-prestamo';
+// import { NotionMagicLinkEmailP } from '@/emails/solicitud-prestamo';
 
 // export const dynamic = "force-dynamic";
 // import prisma from '@/lib/prisma';
@@ -51,52 +51,52 @@ export async function POST (req: Request) {
     
 }
 
-export async function PUT (req: Request) {
-    const {nombres, apellidos, cedula, email, fechaNacimiento, direccion, tipoVivienda, tiempoHabVivienda, procedimiento, celular, ciudad, lugarTrabajo, cargo, ingMensual, tiempoTrabajo, tipoEmpresa, sectorProductivo, localidadCiudad, dirEmpresa, refUbicacion, telfEmpresa, otroIngr, nomRef, apeRef, parentezco, telfRef} = await req.json();
-    //  console.log(nombres, apellidos, cedula, email, fechaNacimiento, direccion, tipoVivienda, tiempoHabVivienda, procedimiento, celular, ciudad, lugarTrabajo, cargo, ingMensual, tiempoTrabajo, tipoEmpresa, sectorProductivo, localidadCiudad, dirEmpresa, refUbicacion, telfEmpresa, otroIngr, nomRef, apeRef, parentezco, telfRef);
+// export async function PUT (req: Request) {
+//     const {nombres, apellidos, cedula, email, fechaNacimiento, direccion, tipoVivienda, tiempoHabVivienda, procedimiento, celular, ciudad, lugarTrabajo, cargo, ingMensual, tiempoTrabajo, tipoEmpresa, sectorProductivo, localidadCiudad, dirEmpresa, refUbicacion, telfEmpresa, otroIngr, nomRef, apeRef, parentezco, telfRef} = await req.json();
+//     //  console.log(nombres, apellidos, cedula, email, fechaNacimiento, direccion, tipoVivienda, tiempoHabVivienda, procedimiento, celular, ciudad, lugarTrabajo, cargo, ingMensual, tiempoTrabajo, tipoEmpresa, sectorProductivo, localidadCiudad, dirEmpresa, refUbicacion, telfEmpresa, otroIngr, nomRef, apeRef, parentezco, telfRef);
     
-    try {
-            await resend.emails.send({
-            from: 'Info <no-reply@creditysalud.com>',
-            to: 'boris.parrales.m@gmail.com',
-            subject: 'Formulario de Analisis de Credito',
-            react: NotionMagicLinkEmailP({
-              nombres: nombres,
-              apellidos: apellidos,
-              cedula: cedula,
-              email: email,
-              fechaNacimiento: fechaNacimiento,
-              direccion: direccion,
-              tipoVivienda: tipoVivienda,
-              tiempoHabVivienda: tiempoHabVivienda,
-              procedimiento: procedimiento,
-              celular: celular,
-              ciudad: ciudad,
-              lugarTrabajo: lugarTrabajo,
-              cargo: cargo,
-              ingMensual: ingMensual,
-              tiempoTrabajo: tiempoTrabajo,
-              tipoEmpresa: tipoEmpresa,
-              sectorProductivo: sectorProductivo, 
-              localidadCiudad: localidadCiudad,
-              dirEmpresa: dirEmpresa,
-              refUbicacion: refUbicacion,
-              telfEmpresa: telfEmpresa,
-              otroIngr: otroIngr,
-              nomRef: nomRef,
-              apeRef: apeRef,
-              parentezco: parentezco,
-              telfRef: telfRef  
-            }),
-          });
+//     try {
+//             await resend.emails.send({
+//             from: 'Info <no-reply@creditysalud.com>',
+//             to: 'boris.parrales.m@gmail.com',
+//             subject: 'Formulario de Analisis de Credito',
+//             react: NotionMagicLinkEmailP({
+//               nombres: nombres,
+//               apellidos: apellidos,
+//               cedula: cedula,
+//               email: email,
+//               fechaNacimiento: fechaNacimiento,
+//               direccion: direccion,
+//               tipoVivienda: tipoVivienda,
+//               tiempoHabVivienda: tiempoHabVivienda,
+//               procedimiento: procedimiento,
+//               celular: celular,
+//               ciudad: ciudad,
+//               lugarTrabajo: lugarTrabajo,
+//               cargo: cargo,
+//               ingMensual: ingMensual,
+//               tiempoTrabajo: tiempoTrabajo,
+//               tipoEmpresa: tipoEmpresa,
+//               sectorProductivo: sectorProductivo, 
+//               localidadCiudad: localidadCiudad,
+//               dirEmpresa: dirEmpresa,
+//               refUbicacion: refUbicacion,
+//               telfEmpresa: telfEmpresa,
+//               otroIngr: otroIngr,
+//               nomRef: nomRef,
+//               apeRef: apeRef,
+//               parentezco: parentezco,
+//               telfRef: telfRef  
+//             }),
+//           });
     
-          return NextResponse.json({status: 'ok'}, {status: 200});
-    } catch (error) {
-        console.log(error);
+//           return NextResponse.json({status: 'ok'}, {status: 200});
+//     } catch (error) {
+//         console.log(error);
         
-    }
+//     }
     
-}
+// }
 
 // export async function PUT (req: Request) {
 //     const {loginCode} = await req.json();
