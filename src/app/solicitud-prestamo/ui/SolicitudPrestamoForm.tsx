@@ -98,7 +98,7 @@ export const SolicitudPrestamoForm = () => {
 
         };
 
-        await fetch("https://creditysalud.com/api/emails", {
+        await fetch("https://creditysalud-next.vercel.app/api/emails", {
             ...requestOptions,
             cache: 'reload',
         }).then(r => r.json());
