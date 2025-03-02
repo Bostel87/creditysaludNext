@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // devIndicators: {
-  //   appIsrStatus: false,
-  // },
+  devIndicators: {
+    appIsrStatus: false,
+  },
   // reactStrictMode: true,
   // poweredByHeader: false,
   // productionBrowserSourceMaps: true,
@@ -23,14 +23,14 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  // async rewrites() {
-  //   return [
-  //     {
-  //       source: '/api/email',
-  //       destination: 'https://creditysalud.com/api/email',
-  //     },
-  //   ]
-  // },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://creditysalud.com/api/:path*",
+      },
+    ]
+  },
   //  as any, // Workaround for
   //
   // Type '() => { source: string; headers: { key: string; value: string; }[]; }[]' is not assignable to type '() => Promise<Header[]>'.
