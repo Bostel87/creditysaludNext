@@ -60,7 +60,7 @@ export const SolicitudPrestamoForm = () => {
         myHeaders.append("Access-Control-Allow-Origin", "https://creditysalud-next.vercel.app/api/emails");
         myHeaders.append("Access-Control-Allow-Methods", "POST");
         // myHeaders.append("Access-Control-Allow-Headers", "Content-Type");
-        myHeaders.append('Access-Control-Allow-Credentials', "true");
+        // myHeaders.append('Access-Control-Allow-Credentials', "true");
 
         const raw = JSON.stringify({
             nombres: data.nombres,
