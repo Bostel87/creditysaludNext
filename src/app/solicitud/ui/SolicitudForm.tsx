@@ -2,6 +2,7 @@
 'use client'
 import { grabarSolicitud } from "@/actions/solicitud";
 import clsx from "clsx";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -364,9 +365,9 @@ export const SolicitudForm = () => {
                 </div>
                 <span className="text-red-500">{errorMessagge}</span>
                 <div className="mt-6 flex items-center justify-end gap-x-6">
-                    <button type="button" className="text-sm/6 font-semibold text-[#111827] hover:text-[#e84e15]">
+                    <Link href="/" className="text-sm/6 font-semibold text-[#111827] hover:text-[#e84e15]">
                         Cancelar
-                    </button>
+                    </Link>
                     <button
                         disabled={isPlacingOrder}
                         type="submit"

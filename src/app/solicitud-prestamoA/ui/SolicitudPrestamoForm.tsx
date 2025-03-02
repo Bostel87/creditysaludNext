@@ -4,6 +4,7 @@ import { grabarSolicutudPrestamo } from "@/actions/solicitud-prestamo";
 import { grabarSolicutudPrestamoA } from "@/actions/solicitud-prestamoA";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -44,13 +45,16 @@ export const SolicitudPrestamoForm = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>();
     const [errorMessagge, setErrorMessagge] = useState("");
+    const [isPlacingOrder, setIsPlacingOrder] = useState(false);
     // const { register, handleSubmit } = useForm<FormInputs>()
 
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
+        setIsPlacingOrder(true);
         // console.log(data);
          const resp = await grabarSolicutudPrestamoA(data);
                 if (!resp?.ok) {
+                    setIsPlacingOrder(false);
                     setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
                 //  console.log({resp});
                     return;
@@ -832,10 +836,11 @@ export const SolicitudPrestamoForm = () => {
                 </div>
                 <span className="text-red-500">{errorMessagge}</span>
                 <div className="mt-6 flex items-center justify-end gap-x-6">
-                    <button type="button" className="text-sm/6 font-semibold text-[#111827] hover:text-[#e84e15]">
+                    <Link href="/" className="text-sm/6 font-semibold text-[#111827] hover:text-[#e84e15]">
                         Cancelar
-                    </button>
+                    </Link>
                     <button
+                        disabled={isPlacingOrder}
                         type="submit"
                         className="rounded-md bg-[#111827] px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-[#e84e15] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#e84e15]"
                     >
