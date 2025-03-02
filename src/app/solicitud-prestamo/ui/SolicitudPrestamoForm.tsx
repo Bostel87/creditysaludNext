@@ -288,6 +288,7 @@ export const SolicitudPrestamoForm = () => {
                                 id="direccion"
                                 // name="procedimiento"
                                 type="text"
+                                placeholder="Urb Solare via a la Costa"
                                 // autoComplete="street-address"
                                 className={
                                     clsx(
@@ -311,7 +312,7 @@ export const SolicitudPrestamoForm = () => {
                             <select
                                 id="tipoVivienda"
 
-                                autoComplete="country-name"
+                                // autoComplete="country-name"
                                 {...register('tipoVivienda', { required: "Tipo de vivienda Requerido" })}
                                 className="col-start-1 row-start-1 w-full appearance-none rounded-md bg-gray-100 py-1.5 pl-3 pr-8 text-base text-[#111827] outline outline-1 -outline-offset-1 outline-white/10 *:bg-gray-800 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-[#e84e15] sm:text-sm/6"
                             >
@@ -361,6 +362,7 @@ export const SolicitudPrestamoForm = () => {
                                 id="celular"
                                 // name="celular"
                                 type="text"
+                                placeholder="0945367744"
                                 onKeyDown={(event) => {
                                     if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
                                         // Allow: Ctrl+A
@@ -402,6 +404,7 @@ export const SolicitudPrestamoForm = () => {
                                 id="ciudad"
                                 // name="ciudad"
                                 type="text"
+                                placeholder="Guayaquil"
                                 // autoComplete="postal-code"
                                 className={
                                     clsx(
@@ -425,6 +428,7 @@ export const SolicitudPrestamoForm = () => {
                                 id="procedimiento"
                                 // name="procedimiento"
                                 type="text"
+                                placeholder="Bypass Gastrico"
                                 // autoComplete="street-address"
                                 className={
                                     clsx(
