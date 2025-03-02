@@ -14,7 +14,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function GET(){
     return NextResponse.json({
-        hello: "World",
+        hello: "Emails",
         // dir : resend.apiKeys.list()
     },
     {
