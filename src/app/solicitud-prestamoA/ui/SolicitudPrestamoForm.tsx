@@ -1,6 +1,7 @@
 // import { ChevronDownIcon } from '@heroicons/react/16/solid'
 'use client'
 import { grabarSolicutudPrestamo } from "@/actions/solicitud-prestamo";
+import { grabarSolicutudPrestamoA } from "@/actions/solicitud-prestamoA";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
@@ -48,14 +49,14 @@ export const SolicitudPrestamoForm = () => {
     const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         setErrorMessagge('');
         // console.log(data);
-         const resp = await grabarSolicutudPrestamo(data);
+         const resp = await grabarSolicutudPrestamoA(data);
                 if (!resp?.ok) {
                     setErrorMessagge(resp?.message || "Error al crear la solicitud de Prestamo");
                 //  console.log({resp});
                     return;
                 }
-            alert('Gracias ..!! Solicitud de Prestamo ingresada');
-            router.push('/');
+                alert('Gracias ..!! Formulario de Análisis de crédito enviado');
+                router.push('/');
 
     }
 

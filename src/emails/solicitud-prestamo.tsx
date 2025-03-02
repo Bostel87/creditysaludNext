@@ -92,32 +92,32 @@ export const NotionMagicLinkEmailP = ({
           Recibiste un formulario de crédito
         </Text>
         {/* <code style={code} className='gap-2'> */}
-          Nombres: <p className='font-light text-[#e84e15]'>{nombres}</p> <br />
-          Apellidos: <p className='font-light text-[#e84e15]'>{apellidos}</p> <br />
-          Cédula: <p className='font-light text-[#e84e15]'>{cedula}</p> <br />
-          Email: <p className='font-light text-[#e84e15]'>{email}</p> <br />
-          Fecha de Nacimiento: <p className='font-light text-[#e84e15]'>{fechaNacimiento}</p> <br />
-          Dirección: <p className='font-light text-[#e84e15]'>{direccion}</p> <br />
-          Tipo de Vivienda: <p className='font-light text-[#e84e15]'>{tipoVivienda}</p> <br />
-          Tiempo Habitando Vivienda: <p className='font-light text-[#e84e15]'>{tiempoHabVivienda}</p> <br />
-          Procedimiento: <p className='font-light text-[#e84e15]'>{procedimiento}</p> <br />
-          Celular: <p className='font-light text-[#e84e15]'>{celular}</p> <br />
-          Ciudad: <p className='font-light text-[#e84e15]'>{ciudad}</p> <br />
-          Lugar de Trabajo: <p className='font-light text-[#e84e15]'>{lugarTrabajo}</p> <br />
-          Cargo: <p className='font-light text-[#e84e15]'>{cargo}</p> <br />
-          Ingreso Mensual: <p className='font-light text-[#e84e15]'>{ingMensual}</p> <br />
-          Tiempo de Trabajo: <p className='font-light text-[#e84e15]'>{tiempoTrabajo}</p> <br />
-          Tipo de Empresa: <p className='font-light text-[#e84e15]'>{tipoEmpresa}</p> <br />
-          Sector Productivo: <p className='font-light text-[#e84e15]'>{sectorProductivo}</p> <br />
-          Localidad de la Ciudad: <p className='font-light text-[#e84e15]'>{localidadCiudad}</p> <br />
-          Dirección de la Empresa: <p className='font-light text-[#e84e15]'>{dirEmpresa}</p> <br />
-          Referencia de Ubicación: <p className='font-light text-[#e84e15]'>{refUbicacion}</p> <br />
-          Teléfono de la Empresa: <p className='font-light text-[#e84e15]'>{telfEmpresa}</p> <br />
-          Otros Ingresos: <p className='font-light text-[#e84e15]'>{otroIngr}</p> <br />
-          Nombre de la Referencia: <p className='font-light text-[#e84e15]'>{nomRef}</p> <br />
-          Apellido de la Referencia: <p className='font-light text-[#e84e15]'>{apeRef}</p> <br />
-          Parentezco: <p className='font-light text-[#e84e15]'>{parentezco} </p><br />
-          Teléfono de la Referencia: <p className='font-light text-[#e84e15]'>{telfRef}</p> <br />
+          Nombres: {nombres} <br />
+          Apellidos: {apellidos} <br />
+          Cédula: {cedula} <br />
+          Email: {email} <br />
+          Fecha de Nacimiento: {fechaNacimiento} <br />
+          Dirección: {direccion} <br />
+          Tipo de Vivienda: {tipoVivienda} <br />
+          Tiempo Habitando Vivienda: {tiempoHabVivienda} <br />
+          Procedimiento: {procedimiento} <br />
+          Celular: {celular} <br />
+          Ciudad: {ciudad} <br />
+          Lugar de Trabajo: {lugarTrabajo} <br />
+          Cargo: {cargo} <br />
+          Ingreso Mensual: {ingMensual} <br />
+          Tiempo de Trabajo: {tiempoTrabajo} <br />
+          Tipo de Empresa: {tipoEmpresa} <br />
+          Sector Productivo: {sectorProductivo} <br />
+          Localidad de la Ciudad: {localidadCiudad} <br />
+          Dirección de la Empresa: {dirEmpresa} <br />
+          Referencia de Ubicación: {refUbicacion} <br />
+          Teléfono de la Empresa: {telfEmpresa} <br />
+          Otros Ingresos: {otroIngr} <br />
+          Nombre de la Referencia: {nomRef} <br />
+          Apellido de la Referencia: {apeRef} <br />
+          Parentezco: {parentezco} <br />
+          Teléfono de la Referencia: {telfRef} <br />
         {/* </code> */}
         {/* <Text
           style={{
